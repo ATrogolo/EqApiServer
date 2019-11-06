@@ -19,8 +19,8 @@ router.get("/:modelId/valuelists/:table", function(request, response) {
   const valuesListResponse = {
     result: "ok",
     values: [
-      { id: "Argentina", text: "Argentina", items: null },
-      { id: "Austria", text: "Austria", items: null }
+      { id: "US", text: "US", items: null },
+      { id: "IT", text: "IT", items: null }
     ]
   };
   response.end(JSON.stringify(valuesListResponse));
