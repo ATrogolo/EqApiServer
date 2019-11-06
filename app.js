@@ -7,7 +7,6 @@ var debug = require("debug")("eqServerApi");
 var dotenv = require("dotenv").config();
 
 var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
 const eqRouter = require("./routes/eq");
 
 const GREEN = 2;
@@ -33,7 +32,6 @@ app.use(function(req, res, next) {
 debug.color = GREEN;
 
 app.use("/", indexRouter);
-app.use("/users", usersRouter);
 
 // EQHandler
 app.use(`/api/easyquery/models`, eqRouter);
@@ -53,8 +51,6 @@ app.use('/translateToSql', (request, response) => {
 
 debug(
   `Available endpoints:
-  - /
-  - /users
   - http://localhost:${process.env.PORT}/api/easyquery/models/:modelId
   - http://localhost:${process.env.PORT}/api/easyquery/models/:modelId/valuelists/:table
   - http://localhost:${process.env.PORT}/api/easyquery/models/:modelId/queries/:queryId/sync
